@@ -1,0 +1,30 @@
+import random
+def swap(x, y):
+	array[x], array[y] = array[y], array[x]
+
+
+array = []
+
+def Sort(array):
+
+	wiecej = []
+	mniej = []
+	rownie = []
+	if len(array) > 1:
+		m = array[0]
+		for x in array:
+			if x > m:
+				wiecej.append(x)
+			elif x < m:
+				mniej.append(x)
+			elif x == m:
+				rownie.append(x)
+		return Sort(wiecej) + rownie + Sort(mniej)	 
+	else:
+		return array
+
+
+for i in range(10):
+	array.append(random.randrange(1,7))
+print(Sort(array))
+
